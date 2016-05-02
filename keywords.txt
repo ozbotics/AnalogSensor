@@ -1,0 +1,32 @@
+#######################################
+# Syntax Coloring Map For AnalogSensor
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+AnalogSensor	KEYWORD1
+MappedAnalogSensor	KEYWORD1
+NtcTempSensor	KEYWORD1
+PtcTempSensor	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+#AnalogSensor 
+getRawValue	KEYWORD2
+requestValue	KEYWORD2
+refreshValue	KEYWORD2
+
+#MappedAnalogSensor
+getMappedValue	KEYWORD2
+refreshValue	KEYWORD2
+_translateValue	KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
