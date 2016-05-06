@@ -1,6 +1,10 @@
 #include <Arduino.h>
 #include "MappedAnalogSensor.h"
 
+void MappedAnalogSensor::refreshValue() { 
+  value->setValue(getMappedValue()); 
+}
+
 int MappedAnalogSensor::_translateValue(int value) {
   int ret = 0;
   
@@ -17,16 +21,3 @@ int MappedAnalogSensor::_translateValue(int value) {
 int MappedAnalogSensor::getMappedValue() {
   return _translateValue(getRawValue());
 }
-
-/*
-void MappedAnalogSensor::getValueString(char * buf) {
-  //Serial.println("Entered MappedAnalogSensor::getValueString");
-  
-  _value = getMappedValue();
-  //Value<int>::getValueString(buf);
-  
-  
-  float displayValue = _value / pow(10, _displayDecimals);
-  dtostrf(displayValue, _displayLength, _displayDecimals, buf);
-}
-*/

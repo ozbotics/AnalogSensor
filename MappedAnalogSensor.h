@@ -22,13 +22,7 @@ class MappedAnalogSensor : public AnalogSensor {
     
     int getMappedValue();
     
-    virtual void refreshValue() { value->setValue(getMappedValue()); }
-
-/*
-    float getFloatValue() {
-      return ((float)getMappedValue()) / (_displayDecimals * 10.0);
-    }
-*/    
+    virtual void refreshValue();
 };
 
 #endif  // _MAPPED_ANALOG_SENSOR_H
