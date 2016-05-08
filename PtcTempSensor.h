@@ -1,11 +1,27 @@
+/** @file PtcTempSensor.h 
+  *  Copyright (c) 2016 Ozbotics 
+  *  Distributed under the MIT license (see LICENSE)
+  */ 
 #ifndef _PTC_TEMP_SENSOR_H
   #define _PTC_TEMP_SENSOR_H
   
 #include <Arduino.h>
 #include "MappedAnalogSensor.h"
 
+/**
+ *  PTC Temperature Sensor
+ */
 class PtcTempSensor : public MappedAnalogSensor {
   public:
+  
+  /**
+    * Constructor
+    *
+    * @param pin The Analog Input pin
+    * @param displayLength The minimum number of charcters to display
+    * @param displayDecimals The number of charcters to display as decimal places
+    * @param divideBy The amount to divide the raw value by  to form the display value
+    */
     PtcTempSensor(byte pin, byte displayLength=4, byte displayDecimals=1, unsigned int divideBy=1) : MappedAnalogSensor(pin, displayLength, displayDecimals, divideBy) {
       value->setDisplayLength(displayLength);
       value->setDisplayDecimals(displayDecimals);

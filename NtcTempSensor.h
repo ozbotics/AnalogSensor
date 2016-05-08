@@ -1,11 +1,27 @@
+/** @file NtcTempSensor.h 
+  *  Copyright (c) 2016 Ozbotics 
+  *  Distributed under the MIT license (see LICENSE)
+  */ 
 #ifndef _NTC_TEMP_SENSOR_H
   #define _NTC_TEMP_SENSOR_H
   
 #include <Arduino.h>
 #include "MappedAnalogSensor.h"
 
+/**
+ *  NTC Temperature Sensor
+*/
 class NtcTempSensor : public MappedAnalogSensor {
   public:
+
+  /**
+    * Constructor
+    *
+    * @param pin The Analog Input pin
+    * @param displayLength The minimum number of charcters to display
+    * @param displayDecimals The number of charcters to display as decimal places
+    * @param divideBy The amount to divide the raw value by  to form the display value
+    */
     NtcTempSensor(byte pin, byte displayLength=4, byte displayDecimals=1, unsigned int divideBy=1) : MappedAnalogSensor(pin, displayLength, displayDecimals, divideBy) {
       value->setDisplayLength(displayLength);
       value->setDisplayDecimals(displayDecimals);
@@ -21,19 +37,6 @@ class NtcTempSensor : public MappedAnalogSensor {
       _translationMap.add((TranslationPair) {360, 100} );
       _translationMap.add((TranslationPair) {460, 20} );
       _translationMap.add((TranslationPair) {1024, 20} );
-
-/*
-      _translationMap.add((TranslationPair) {0, 20} );
-
-      _translationMap.add((TranslationPair) {539, 20} );
-      _translationMap.add((TranslationPair) {590, 50} );
-      _translationMap.add((TranslationPair) {717, 170} );
-      _translationMap.add((TranslationPair) {808, 280} );
-      _translationMap.add((TranslationPair) {880, 400} );
-      _translationMap.add((TranslationPair) {938, 550} );
-
-      _translationMap.add((TranslationPair) {1024, 550} );
-*/
 
       _translationMapLength = _translationMap.size();
     }
