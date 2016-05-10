@@ -55,7 +55,6 @@ class MappedAnalogSensor : public AnalogSensor {
     * Transform the input value into the translated-output value
     *  by interpolating between TranslationPair(s)
     *
-    * @param value the raw-input value
     * @return the translated-output value
     */
     int getMappedValue();
