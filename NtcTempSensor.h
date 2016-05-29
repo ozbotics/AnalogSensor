@@ -23,6 +23,15 @@ class NtcTempSensor : public MappedAnalogSensor {
     * @param divideBy The amount to divide the raw value by  to form the display value
     */
     NtcTempSensor(byte pin, byte displayLength=4, byte displayDecimals=1, unsigned int divideBy=1) : MappedAnalogSensor(pin, displayLength, displayDecimals, divideBy) {
+Serial.print(F("NtcTempSensor displayLength:"));
+Serial.print(displayLength);
+
+Serial.print(F(", displayDecimals:"));
+Serial.print(displayDecimals);
+
+Serial.print(F(", divideBy:"));
+Serial.println(divideBy);
+
       value->setDisplayLength(displayLength);
       value->setDisplayDecimals(displayDecimals);
       value->setDivideBy(divideBy);

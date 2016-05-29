@@ -19,5 +19,11 @@ int MappedAnalogSensor::_translateValue(int value) {
 }
 
 int MappedAnalogSensor::getMappedValue() {
-  return _translateValue(getRawValue());
+  int value = getRawValue();
+  
+  for (int i=0; i<5; i++) {
+    value = (value + getRawValue()) / 2;
+  }
+  
+  return _translateValue(value);
 }
