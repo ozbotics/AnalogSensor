@@ -23,11 +23,13 @@ class AnalogSensor : public Sensor<unsigned int> {
     * Constructor
     *
     * @param pin The Analog Input pin
+    * @param maxValue The maximum reasonable value
+    * @param minValue The minimum reasonable value
     * @param displayLength The minimum number of charcters to display
     * @param displayDecimals The number of charcters to display as decimal places
     * @param divideBy The amount to divide the raw value by  to form the display value
     */
-    AnalogSensor(byte pin, byte displayLength=1, byte displayDecimals=0, unsigned int divideBy=1) : _pin(pin), Sensor<unsigned int>(displayLength, displayDecimals, divideBy) {}
+    AnalogSensor(byte pin, unsigned int maxValue=0, unsigned int minValue=0, byte displayLength=1, byte displayDecimals=0, unsigned int divideBy=1) : _pin(pin), Sensor<unsigned int>(maxValue, minValue, displayLength, displayDecimals, divideBy) {}
     
    /**
     *  get the raw value directly from the Analog Input ADC

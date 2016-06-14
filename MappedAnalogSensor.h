@@ -45,11 +45,13 @@ class MappedAnalogSensor : public AnalogSensor {
     * Constructor
     *
     * @param pin The Analog Input pin
+    * @param maxValue The maximum reasonable value
+    * @param minValue The minimum reasonable value
     * @param displayLength The minimum number of charcters to display
     * @param displayDecimals The number of charcters to display as decimal places
     * @param divideBy The amount to divide the raw value by  to form the display value
     */
-    MappedAnalogSensor(byte pin, byte displayLength=1, byte displayDecimals=0, unsigned int divideBy=1) : AnalogSensor(pin, displayLength, displayDecimals, divideBy) {}
+    MappedAnalogSensor(byte pin, unsigned int maxValue=0, unsigned int minValue=0, byte displayLength=1, byte displayDecimals=0, unsigned int divideBy=1) : AnalogSensor(pin, maxValue, minValue, displayLength, displayDecimals, divideBy) {}
     
    /**
     * Transform the input value into the translated-output value

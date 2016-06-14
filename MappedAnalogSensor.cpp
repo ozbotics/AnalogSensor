@@ -2,7 +2,7 @@
 #include "MappedAnalogSensor.h"
 
 void MappedAnalogSensor::refreshValue() { 
-  value->setValue(getMappedValue()); 
+  _updateValue(getMappedValue());  
 }
 
 int MappedAnalogSensor::_translateValue(int value) {

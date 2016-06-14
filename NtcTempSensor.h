@@ -18,11 +18,13 @@ class NtcTempSensor : public MappedAnalogSensor {
     * Constructor
     *
     * @param pin The Analog Input pin
+    * @param maxValue The maximum reasonable value
+    * @param minValue The minimum reasonable value
     * @param displayLength The minimum number of charcters to display
     * @param displayDecimals The number of charcters to display as decimal places
     * @param divideBy The amount to divide the raw value by  to form the display value
     */
-    NtcTempSensor(byte pin, byte displayLength=4, byte displayDecimals=1, unsigned int divideBy=1) : MappedAnalogSensor(pin, displayLength, displayDecimals, divideBy) {
+    NtcTempSensor(byte pin, unsigned int maxValue=0, unsigned int minValue=0, byte displayLength=4, byte displayDecimals=1, unsigned int divideBy=1) : MappedAnalogSensor(pin, maxValue, minValue, displayLength, displayDecimals, divideBy) {
       value->setDisplayLength(displayLength);
       value->setDisplayDecimals(displayDecimals);
       value->setDivideBy(divideBy);
